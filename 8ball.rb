@@ -21,19 +21,28 @@ class EightBall
   ANSWERS_DEFAULT = ["Yes", "No", "Maybe", "Go ask your Mother", "Answer hazy; ask again later", "#YOLO", "How would I know that?"] 
 
   def initialize
-    @answers = ANSWERS_DEFAULT
+    @answers = ANSWERS_DEFAULT.clone
     @num_answers = @answers.length
   end
 
   def add_answers
     puts 'Please enter a NEW answer to be used.'
-    @added_answer = gets.stip
+    added_answer = gets.strip
+    @answers << added_answer
+    @num_answers += 1
   end
   
 
   def reset_answers
     puts 'Are you sure you would like to reset the answer bank? (y/n)'
-    @reset_answer_confirm = gets.stip
+    reset_answer_confirm = gets.strip.downcase
+    if(reset_answer_confirm == "y" || reset_answer_confirm == "yes")
+      puts "Resetting to default..."
+      @answers = []
+      @answers = ANSWERS_DEFAULT.clone
+    else
+      puts "Canceled."
+    end
   end
   
   def get_user_input
