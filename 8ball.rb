@@ -28,8 +28,12 @@ class EightBall
   def add_answers
     puts 'Please enter a NEW answer to be used.'
     added_answer = gets.strip
-    @answers << added_answer
-    @num_answers += 1
+    if @answers.include?(added_answer) == false
+      @answers << added_answer
+      @num_answers += 1
+    else
+      puts 'That answer already exists.'
+    end
   end
   
 
