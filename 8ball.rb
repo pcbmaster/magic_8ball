@@ -58,10 +58,10 @@ class EightBall
       selected_answer = rand(@num_answers-1)
       puts("My answer is as follows mortal; %s" % @answers[selected_answer])
     end
+  end
 
   def print_answers
     puts 'Printing answers...'
     puts @answers.each_with_index{|value,index| puts"%d. %s" % [index+1, value]}
   end
-
 end
