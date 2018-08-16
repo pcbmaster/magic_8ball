@@ -62,6 +62,6 @@ class EightBall
 
   def print_answers
     puts 'Printing answers...'
-    puts @answers.each_with_index{|value,index| puts"%d. %s" % [index+1, value]}
+   @answers.each_with_index{|value,index| puts"%d. %s" % [index+1, value]}
   end
 end
