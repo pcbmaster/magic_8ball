@@ -30,11 +30,11 @@ class EightBall
     @added_answer = gets.stip
   end
   
-  #   *reset_answers
+
   def reset_answers
     puts 'Are you sure you would like to reset the answer bank? (y/n)'
     @reset_answer_confirm = gets.stip
-  
+  end
   
   def get_user_input
     puts "Ask the mighty 8-Ball a question, mortal!"
